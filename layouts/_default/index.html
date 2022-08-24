@@ -36,34 +36,39 @@
         {{ if $.Site.Params.ShowReadingTime }}
           <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
         {{ end }}
+        {{ if .Params.categories }}
+          <span class="post-categories">
+            {{ range .Params.categories }}
+              <a href="{{ (urlize (printf "categories/%s" . )) | absLangURL }}/"><i class="ti ti-category"></i>{{ . }}</a>&nbsp;
+            {{ end }}
+          </span>
+        {{ end }}
       </div>
-
-      {{ if .Params.tags }}
-        <span class="post-tags">
-          {{ range .Params.tags }}
-            <a href="{{ (urlize (printf "tags/%s" . )) | absLangURL }}/">#{{ . }}</a>&nbsp;
-          {{ end }}
-        </span>
-      {{ end }}
 
       {{ if .Params.Cover }}
         {{ partial "postcover.html" . }}
       {{ end }}
 
+      {{ if or .Description .Summary }}
       <div class="post-content">
         {{ with .Description }}
           {{ . | markdownify }}
         {{ else }}
-          {{ if .Truncated }}
+          {{ if .Summary }}
             {{ .Summary }}
           {{ end }}
         {{ end }}
       </div>
-      {{ if not .Params.hideReadMore }}
-        <div><a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore | default "Read more" }} →</a></div>
       {{ end }}
     </article>
     {{ end }}
-    {{ partial "pagination.html" . }}
+    {{/*  reuse pagination's style to center button  */}}
+    <div class="pagination__buttons">
+      <span class="button">
+        <a href="{{ ref . "posts" }}">
+          <span class="button__text">{{ $.Site.Params.AllPosts | default "All posts" }}</span>
+        </a>
+      </span>
+    </div>
   </div>
 {{ end }}

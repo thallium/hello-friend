@@ -1,0 +1,10 @@
+<div class="dropdown menu__sub-inner">
+  <div class="link">
+    <i class="ti ti-world" style="font-size: 24px;"></i>
+  </div>
+  <ul class="menu__sub-inner-more">
+  {{ range .AllTranslations }}
+      <li><a href="{{ .Permalink }}">{{ .Site.Params.langName }}</a></li>
+  {{ end }}
+  </ul>
+</div>

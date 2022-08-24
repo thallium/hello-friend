@@ -1,17 +1,19 @@
+.index-content,
+.posts,
 .post {
   width: 100%;
   max-width: 800px;
   text-align: left;
-  padding: 20px;
-  margin: 20px auto;
+  padding: 10px;
+  margin: 10px auto;
 
   @media ($tablet) {
     max-width: 660px;
   }
 
-  &:not(:last-of-type) {
-    border-bottom: 1px solid var(--border-color);
-  }
+  /* &:not(:last-of-type) {                          */
+  /*   border-bottom: 1px solid var(--border-color); */
+  /* }                                               */
 
   &-meta {
     font-size: 1rem;
@@ -24,7 +26,7 @@
 
   &-title {
     font-size: 2.625rem;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
 
     @media ($phone) {
       font-size: 2rem;
@@ -36,8 +38,6 @@
   }
 
   &-tags {
-    display: block;
-    margin-bottom: 20px;
     font-size: 1rem;
     opacity: .5;
 
@@ -46,8 +46,14 @@
     }
   }
 
+  .post-categories {
+    a {
+      text-decoration: none;
+    }
+  }
+
   &-content {
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   &-cover {
@@ -66,6 +72,11 @@
       width: 100%;
     }
   }
+
+  .katex-display {
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
 }
 
 .post--regulation {
@@ -82,4 +93,8 @@
       margin-bottom: 20px;
     }
   }
+}
+
+.on-list .post-title {
+    font-size: 1.5rem;
 }

@@ -24,35 +24,29 @@
               >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
             >
           {{ end }}
+          {{ if .Params.categories }}
+            <span class="post-categories">
+              {{ range .Params.categories }}
+                <a href="{{ (urlize (printf "categories/%s" . )) | absLangURL }}/"><i class="ti ti-category"></i>{{ . }}</a>&nbsp;
+              {{ end }}
+            </span>
+          {{ end }}
         </div>
-
-        {{ if .Params.tags }}
-          <span class="post-tags">
-            {{ range .Params.tags }}
-              <a href="{{ (urlize (printf "tags/%s" . )) | absLangURL }}/">#{{ . }}</a>&nbsp;
-            {{ end }}
-          </span>
-        {{ end }}
 
         {{ if .Params.Cover }}
           {{ partial "postcover.html" . }}
         {{ end }}
 
+        {{ if or .Description .Summary }}
         <div class="post-content">
           {{ with .Description }}
             {{ . | markdownify }}
-            {{ else }}
-            {{ if .Truncated }}
+          {{ else }}
+            {{ if .Summary }}
               {{ .Summary }}
             {{ end }}
           {{ end }}
         </div>
-        {{ if not .Params.hideReadMore }}
-          <div>
-            <a class="read-more button" href="{{ .RelPermalink }}"
-              >{{ $.Site.Params.ReadMore | default "Read more" }} →</a
-            >
-          </div>
         {{ end }}
       </article>
     {{ end }}
