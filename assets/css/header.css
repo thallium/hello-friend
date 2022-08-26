@@ -26,7 +26,8 @@
   }
 }
 
-.theme-toggle {
+.theme-toggle svg {
+/* .theme-toggle { */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,4 +37,14 @@
 
 .theme-toggler {
   fill: currentColor;
+}
+
+.lang-toggle {
+  margin-left: 13px;
+}
+
+.lang-toggle svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
