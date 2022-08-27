@@ -3,7 +3,7 @@ const menu = document.querySelector(".menu");
 const mobileMenuTrigger = document.querySelector(".menu-trigger");
 const desktopMenu = document.querySelector(".menu__inner--desktop");
 const desktopMenuTrigger = document.querySelector(".menu__sub-inner-more-trigger");
-const menuMore = document.querySelector(".menu__sub-inner-more");
+const menuMore = document.querySelector(".menu .menu__sub-inner-more");
 const mobileQuery = getComputedStyle(document.body).getPropertyValue("--phoneWidth");
 const isMobile = () => window.matchMedia(mobileQuery).matches;
 const isMobileMenu = () => {
