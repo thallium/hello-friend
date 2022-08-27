@@ -229,7 +229,6 @@ ol ol {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
 }
 
 .content {
@@ -239,7 +238,6 @@ ol ol {
   align-items: center;
   justify-content: center;
   margin: 50px 0;
-
   @media (--phone) {
     margin-top: 0;
   }
@@ -253,9 +251,7 @@ hr {
 }
 
 .hidden {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 100ms ease-in-out;
+  display: none;
 }
 
 .framed {

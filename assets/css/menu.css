@@ -146,3 +146,9 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+.dropdown > .menu__sub-inner-more {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 100ms ease-in-out;
+}
