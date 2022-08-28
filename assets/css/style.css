@@ -14,5 +14,6 @@
 @import 'terms.css';
 @import 'archive.css';
 
-@import 'prism.css';
+@import 'prism-dark.css';
+@import 'prism-light.css';
 @import 'code.css';
