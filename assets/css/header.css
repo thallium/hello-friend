@@ -25,26 +25,3 @@
     max-width: 100%;
   }
 }
-
-.theme-toggle svg {
-/* .theme-toggle { */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.theme-toggler {
-  fill: currentColor;
-}
-
-.lang-toggle {
-  margin-left: 13px;
-}
-
-.lang-toggle svg {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
