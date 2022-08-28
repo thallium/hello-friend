@@ -45,6 +45,12 @@
     }
   }
 
+  .post-categories {
+    a {
+      text-decoration: none;
+    }
+  }
+
   &-content {
     margin-top: 10px;
   }
