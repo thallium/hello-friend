@@ -37,15 +37,17 @@
           {{ partial "postcover.html" . }}
         {{ end }}
 
+        {{ if or .Description .Summary }}
         <div class="post-content">
           {{ with .Description }}
             {{ . | markdownify }}
-            {{ else }}
-            {{ if .Truncated }}
+          {{ else }}
+            {{ if .Summary }}
               {{ .Summary }}
             {{ end }}
           {{ end }}
         </div>
+        {{ end }}
       </div>
     {{ end }}
     {{ partial "pagination.html" . }}
