@@ -36,12 +36,12 @@
         {{ if $.Site.Params.ShowReadingTime }}
           <span class="post-read-time">— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span>
         {{ end }}
-        {{ if .Params.tags }}
-            <span class="post-tags">
-            {{ range .Params.tags }}
-                <a href="{{ (urlize (printf "tags/%s" . )) | absLangURL }}/">#{{ . }}</a>&nbsp;
+        {{ if .Params.categories }}
+          <span class="post-categories">
+            {{ range .Params.categories }}
+              <a href="{{ (urlize (printf "categories/%s" . )) | absLangURL }}/"><i class="ti ti-category"></i>{{ . }}</a>&nbsp;
             {{ end }}
-            </span>
+          </span>
         {{ end }}
       </div>
 
