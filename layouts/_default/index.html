@@ -62,6 +62,13 @@
       {{ end }}
     </div>
     {{ end }}
-    {{ partial "pagination.html" . }}
+    {{/*  reuse pagination's style to center button  */}}
+    <div class="pagination__buttons">
+      <span class="button">
+        <a href="{{ ref . "posts" }}">
+          <span class="button__text">{{ $.Site.Params.AllPosts | default "All posts" }}</span>
+        </a>
+      </span>
+    </div>
   </div>
 {{ end }}
