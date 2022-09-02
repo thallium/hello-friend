@@ -72,6 +72,11 @@
       width: 100%;
     }
   }
+
+  .katex-display {
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
 }
 
 .post--regulation {
