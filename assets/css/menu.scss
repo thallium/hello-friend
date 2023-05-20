@@ -7,7 +7,6 @@
   list-style: none;
   border-radius: 5px;
   z-index: 99;
-  right: -1rem;
 }
 
 .menu {
@@ -86,8 +85,7 @@
 
     &-more {
       @include menu;
-      top: 35px;
-      left: 0;
+      left: -1.5rem;
 
       &-trigger {
         display: inline-flex;
@@ -138,6 +136,7 @@
 }
 
 .dropdown {
+  pointer-events: none;
   --color: rgba(0, 0, 0, .12);
   --shadow: 0 8px 20px var(--color);
   a {
@@ -145,15 +144,19 @@
   }
 }
 
+.dropdown > .link {
+  pointer-events: auto;
+}
+
 .dropdown:hover > .menu__sub-inner-more {
-  opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
 .dropdown > .menu__sub-inner-more {
-  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 100ms ease-in-out;
+  transition: visibility 100ms ease-in-out;
 }
 
 .lang-toggle .link {
