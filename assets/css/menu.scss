@@ -142,21 +142,18 @@
   a {
     text-decoration: none;
   }
-}
-
-.dropdown > .link {
-  pointer-events: auto;
+  .link {
+    pointer-events: auto;
+  } 
+  .menu__sub-inner-more {
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+  }
 }
 
 .dropdown:hover > .menu__sub-inner-more {
-  visibility: visible;
+  opacity: 1;
   pointer-events: auto;
-}
-
-.dropdown > .menu__sub-inner-more {
-  visibility: hidden;
-  pointer-events: none;
-  transition: visibility 100ms ease-in-out;
 }
 
 .lang-toggle .link {
