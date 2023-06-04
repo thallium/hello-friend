@@ -6,7 +6,7 @@
   {{ if .IsHome }}
     {{ $PageContext = .Site }}
   {{ end }}
-  {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) }}
+  {{ $paginator := .Paginate (where $PageContext.RegularPages "Type" $contentTypeName) 3 }}
 
   {{ if .Content }}
     <div class="index-content {{ if .Params.framed -}}framed{{- end -}}">
@@ -14,7 +14,9 @@
     </div>
   {{ end }}
 
+
   <div class="posts">
+    <h2 style="padding-left: 10px; font-size: 2rem">{{ .Site.Params.recentPosts }}</h2>
     {{ range $paginator.Pages }}
     <article class="post on-list">
       <h1 class="post-title"><a href="{{ .Permalink }}">{{ .Title | markdownify }}</a></h1>
